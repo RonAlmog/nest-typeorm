@@ -13,12 +13,12 @@ export class UsersService {
     return this.usersRepo.save(newUser);
   }
 
-  findAll() {
-    return this.usersRepo.find();
+  async findAll() {
+    return await this.usersRepo.find();
   }
 
-  findOne(id: number) {
-    return this.usersRepo.findOneBy({ id });
+  async findOne(id: number) {
+    return await this.usersRepo.findOneBy({ id });
   }
 
   async update(id: number, updateUserDto: UpdateUserDto) {
@@ -27,6 +27,7 @@ export class UsersService {
   }
 
   async remove(id: number) {
-    return await this.usersRepo.delete(id);
+    const user = await this.findOne(id);
+    return this.usersRepo.delete(user);
   }
 }
