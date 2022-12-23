@@ -7,4 +7,10 @@ export class User {
 
   @Column()
   name: string; // varchar
+
+  @Column()
+  email: string;
+
+  @Column()
+  phone: string;
 }

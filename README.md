@@ -72,8 +72,15 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 Nest is [MIT licensed](LICENSE).
 
-
 ## Cli commands
-# generate resource
-nest g res cat  
 
+# generate resource
+
+nest g res cat
+
+# migrations:
+
+change/add entities, then run:
+npm run migration:generate -- db/migrations/UserMigration
+
+this will create migration file. to run it:
